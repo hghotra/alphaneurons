@@ -80,6 +80,25 @@ const posts = (await getCollection('blog')).sort(
 				color: var(--muted);
 				margin: 0;
 			}
+			.post-excerpt {
+				font-size: 0.95em;
+				color: var(--ink-soft);
+				margin: 0.6em 0 0.4em;
+			}
+			.read-more {
+				font-family: var(--font-mono);
+				font-size: 0.8rem;
+				margin: 0;
+			}
+			.read-more a {
+				color: var(--muted);
+				text-decoration: none;
+			}
+			.read-more a:hover {
+				color: var(--ink);
+				text-decoration: underline;
+				text-underline-offset: 3px;
+			}
 		</style>
 	</head>
 	<body>
@@ -201,6 +220,10 @@ const posts = (await getCollection('blog')).sort(
 								</h2>
 								<p class="post-date">
 									<FormattedDate date={post.data.pubDate} />
+								</p>
+								<p class="post-excerpt">{post.data.description}</p>
+								<p class="read-more">
+									<a href={import.meta.env.BASE_URL + post.id + '/'}>read more →</a>
 								</p>
 							</li>
 						))
