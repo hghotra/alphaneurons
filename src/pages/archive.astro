@@ -14,7 +14,7 @@ const posts = (await getCollection('blog')).sort(
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={`Archive — ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+		<BaseHead title={`archive · ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
 		<style>
 			h1 {
 				font-size: 1.5em;
@@ -55,7 +55,7 @@ const posts = (await getCollection('blog')).sort(
 	<body>
 		<Header />
 		<main>
-			<h1>Archive</h1>
+			<h1>archive</h1>
 			<ul class="post-list">
 				{
 					posts.map((post) => (
