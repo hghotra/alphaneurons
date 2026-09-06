@@ -1,0 +1,22 @@
+---
+import { AUTHOR } from '../consts';
+const today = new Date();
+---
+
+<footer>
+	<p>© {today.getFullYear()} {AUTHOR}. All rights reserved.</p>
+</footer>
+<style>
+	footer {
+		width: 680px;
+		max-width: calc(100% - 3em);
+		margin: 0 auto;
+		padding: 0 0 4em;
+	}
+	p {
+		font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+		font-size: 0.75rem;
+		color: var(--muted);
+		margin: 0;
+	}
+</style>

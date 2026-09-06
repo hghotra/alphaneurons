@@ -1,0 +1,32 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { AUTHOR, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`About — ${SITE_TITLE}`} description={`About ${AUTHOR}`} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<article>
+				<h1>About</h1>
+				<p>
+					I'm a Director of Engineering at Cohere, where I work on all things
+					infrastructure. This is where I write about software and whatever else I'm
+					thinking about — infrastructure, reliability, and the systems underneath
+					everything else.
+				</p>
+				<p>
+					You can reach me at <span class="meta">you@example.com</span>, or find me on
+					<span class="meta">GitHub</span> / <span class="meta">Mastodon</span>.
+				</p>
+			</article>
+		</main>
+		<Footer />
+	</body>
+</html>
