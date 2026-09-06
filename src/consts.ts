@@ -3,4 +3,4 @@
 
 export const SITE_TITLE = 'AlphaNeurons';
 export const SITE_DESCRIPTION = 'Notes on infrastructure, reliability, and what runs underneath the stack.';
-export const AUTHOR = 'Harvinder Ghotra';
+export const AUTHOR = 'HSG';
