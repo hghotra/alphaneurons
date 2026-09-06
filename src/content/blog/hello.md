@@ -1,5 +1,5 @@
 ---
-title: 'Hello'
+title: 'hello world'
 description: 'This blog exists now. Here is what it is for.'
 pubDate: 'Sep 06 2026'
 ---
