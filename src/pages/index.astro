@@ -22,6 +22,34 @@ const posts = (await getCollection('blog')).sort(
 				color: var(--ink-soft);
 				margin: 0.5em 0 2.5em;
 			}
+			.hero {
+				margin: 0 0 2.5em;
+				border: 1px solid var(--hairline);
+				border-radius: 10px;
+				overflow: hidden;
+				background: #0e0e10;
+			}
+			.hero svg {
+				display: block;
+				width: 100%;
+				height: auto;
+			}
+			.hero svg text {
+				font-family: var(--font-mono);
+			}
+			.hero .cursor {
+				animation: blink 1.1s steps(1) infinite;
+			}
+			@keyframes blink {
+				50% {
+					opacity: 0;
+				}
+			}
+			@media (prefers-reduced-motion: reduce) {
+				.hero .cursor {
+					animation: none;
+				}
+			}
 			.post-list {
 				list-style: none;
 				margin: 0;
@@ -58,6 +86,111 @@ const posts = (await getCollection('blog')).sort(
 		<Header />
 		<main>
 			<p class="tagline">{SITE_DESCRIPTION}</p>
+			<div class="hero">
+				<svg viewBox="0 0 680 320" role="img" aria-label="Dark abstract diagram of tangled infrastructure: server nodes, service boxes, a terminal window, and handwritten annotations">
+					<defs>
+						<pattern id="heroGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+							<circle cx="1" cy="1" r="1" fill="#1b1b21"></circle>
+						</pattern>
+						<radialGradient id="heroVig" cx="50%" cy="42%" r="75%">
+							<stop offset="55%" stop-color="#0e0e10" stop-opacity="0"></stop>
+							<stop offset="100%" stop-color="#0e0e10" stop-opacity="0.9"></stop>
+						</radialGradient>
+						<marker id="heroArr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+							<path d="M0,0 L8,4 L0,8 z" fill="#4a4a52"></path>
+						</marker>
+					</defs>
+					<rect width="680" height="320" fill="#0e0e10"></rect>
+					<rect width="680" height="320" fill="url(#heroGrid)"></rect>
+					<text x="16" y="150" font-size="110" fill="#ffffff" opacity="0.04">[</text>
+					<text x="576" y="300" font-size="110" fill="#ffffff" opacity="0.04">]</text>
+					<text x="596" y="86" font-size="44" fill="#ffffff" opacity="0.05">$</text>
+					<text x="40" y="60" font-size="30" fill="#ffffff" opacity="0.05">#</text>
+					<g stroke="#34343c" stroke-width="1.2">
+						<line x1="80" y1="80" x2="170" y2="60"></line>
+						<line x1="80" y1="80" x2="120" y2="160"></line>
+						<line x1="170" y1="60" x2="250" y2="100"></line>
+						<line x1="250" y1="100" x2="210" y2="180"></line>
+						<line x1="250" y1="100" x2="300" y2="170"></line>
+						<line x1="120" y1="160" x2="210" y2="180"></line>
+						<line x1="120" y1="160" x2="90" y2="240"></line>
+						<line x1="210" y1="180" x2="200" y2="250"></line>
+						<line x1="300" y1="170" x2="200" y2="250"></line>
+						<line x1="300" y1="170" x2="320" y2="250"></line>
+						<line x1="90" y1="240" x2="200" y2="250"></line>
+						<line x1="200" y1="250" x2="320" y2="250"></line>
+						<path d="M300,170 C340,150 360,110 398,82" fill="none"></path>
+					</g>
+					<line x1="210" y1="180" x2="200" y2="250" stroke="#6fbf8f" stroke-width="1.4" opacity="0.8"></line>
+					<g fill="#141418" stroke="#4c4c55" stroke-width="1.4">
+						<circle cx="80" cy="80" r="7"></circle>
+						<circle cx="170" cy="60" r="5"></circle>
+						<circle cx="250" cy="100" r="9"></circle>
+						<circle cx="120" cy="160" r="6"></circle>
+						<circle cx="210" cy="180" r="5"></circle>
+						<circle cx="300" cy="170" r="7"></circle>
+						<circle cx="90" cy="240" r="5"></circle>
+						<circle cx="320" cy="250" r="5"></circle>
+					</g>
+					<circle cx="200" cy="250" r="8" fill="#12241a" stroke="#6fbf8f" stroke-width="1.4"></circle>
+					<circle cx="200" cy="250" r="2.5" fill="#6fbf8f"></circle>
+					<g font-size="9" fill="#71717a">
+						<text x="80" y="98">ingest</text>
+						<text x="170" y="48">queue</text>
+						<text x="250" y="118">router</text>
+						<text x="120" y="178">cache</text>
+						<text x="210" y="168">eval</text>
+						<text x="300" y="188">k8s</text>
+						<text x="90" y="258">otel</text>
+						<text x="200" y="268">gpu</text>
+						<text x="320" y="268">pg</text>
+					</g>
+					<g fill="none" stroke="#3d3d46" stroke-width="1.2" stroke-dasharray="5 4">
+						<rect x="402" y="52" width="108" height="46" rx="4"></rect>
+						<rect x="528" y="52" width="92" height="46" rx="4"></rect>
+						<rect x="448" y="118" width="140" height="42" rx="4"></rect>
+					</g>
+					<line x1="510" y1="75" x2="523" y2="75" stroke="#4a4a52" stroke-width="1.4" marker-end="url(#heroArr)"></line>
+					<line x1="490" y1="98" x2="490" y2="113" stroke="#4a4a52" stroke-width="1.4" marker-end="url(#heroArr)"></line>
+					<g font-size="11" fill="#b9b9c1">
+						<text x="440" y="72">api</text>
+						<text x="556" y="72">worker</text>
+						<text x="491" y="143">event bus</text>
+					</g>
+					<g font-size="9" fill="#5f5f68">
+						<text x="442" y="86">3 repl</text>
+						<text x="560" y="86">cron */5</text>
+						<text x="512" y="156">nats</text>
+					</g>
+					<rect x="380" y="188" width="272" height="110" rx="6" fill="#0a0a0d" stroke="#2b2b32" stroke-width="1.2"></rect>
+					<circle cx="396" cy="201" r="3" fill="#3a3a43"></circle>
+					<circle cx="408" cy="201" r="3" fill="#3a3a43"></circle>
+					<circle cx="420" cy="201" r="3" fill="#3a3a43"></circle>
+					<text x="436" y="205" font-size="9" fill="#55555e">prod · us-east</text>
+					<text x="394" y="226" font-size="10" fill="#b9b9c1"><tspan fill="#6fbf8f">$</tspan> kubectl get pods</text>
+					<text x="394" y="244" font-size="10" fill="#71717a">api-7d9f 1/1 Running</text>
+					<text x="394" y="262" font-size="10" fill="#71717a">p99 212ms · cache hit 94%</text>
+					<text x="394" y="280" font-size="10" fill="#6fbf8f">$</text>
+					<rect class="cursor" x="406" y="270" width="7" height="12" fill="#6fbf8f"></rect>
+					<g fill="none" stroke="#d9a441" stroke-width="1.6" stroke-linecap="round" opacity="0.9">
+						<path d="M232 92 C238 82 258 80 268 88 C278 96 276 110 266 116 C256 122 240 120 233 111 C228 104 230 95 236 91"></path>
+						<path d="M270 84 L298 64"></path>
+						<path d="M298 64 l-9 1 M298 64 l-2 9"></path>
+						<path d="M52 296 q12 -6 24 0 t24 0 t24 0"></path>
+					</g>
+					<text x="306" y="60" font-size="11" font-style="italic" fill="#d9a441" transform="rotate(-4 306 60)">hot path?</text>
+					<text x="52" y="288" font-size="11" font-style="italic" fill="#d9a441" transform="rotate(-3 52 288)">todo: sleep</text>
+					<g fill="#26262c">
+						<text x="340" y="60" font-size="15">~</text>
+						<text x="60" y="200" font-size="14">*</text>
+						<text x="360" y="230" font-size="14">/</text>
+						<text x="150" y="300" font-size="15">+</text>
+						<text x="620" y="150" font-size="14">=</text>
+						<text x="30" y="270" font-size="14">#</text>
+					</g>
+					<rect width="680" height="320" fill="url(#heroVig)"></rect>
+				</svg>
+			</div>
 			<section>
 				<ul class="post-list">
 					{
